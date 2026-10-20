@@ -1,3 +1,7 @@
+<!-- KAN_DESIGN_hero_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/hero-mobile.svg"/><img src="assets/readme/hero.svg" width="100%" alt="KAN × ECG. Prediction is one test. Fidelity is another. Concept animated network."/></picture></p>
+<!-- KAN_DESIGN_hero_END -->
+
 <div align="center">
 
 # KAN × ECG
@@ -16,6 +20,12 @@ School of BioSciences, Engineering and Technology · VIT Bhopal University, Indi
 
 </div>
 
+<!-- KAN_DESIGN_question_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-question-mobile.svg"/><img src="assets/readme/section-question.svg" width="100%" alt="THE QUESTION BEHIND THE MODEL. Classifier performance and symbolic fidelity are separate outcomes."/></picture></p>
+
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/questions-mobile.svg"/><img src="assets/readme/questions.svg" width="100%" alt="Classifier evaluation and symbolic fidelity as separate research questions."/></picture></p>
+<!-- KAN_DESIGN_question_END -->
+
 ## The question
 
 Kolmogorov–Arnold networks learn functions on network edges. That architectural transparency does not automatically establish that a trained classifier can be compressed into a short, faithful symbolic rule.
@@ -23,6 +33,10 @@ Kolmogorov–Arnold networks learn functions on network edges. That architectura
 We evaluate a **custom degree-one spline KAN on twelve engineered ECG features**, compare feature-matched baselines, and test symbolic approximations against explicit acceptance gates. The endpoint is **ventricular ectopic beat versus non-ventricular beat classification**, not end-to-end clinical arrhythmia diagnosis.
 
 **Main finding:** classifier performance and explanation fidelity are different outcomes. No tested surrogate passed every acceptance gate; predictive rankings changed across cohorts.
+
+<!-- KAN_DESIGN_results_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-results-mobile.svg"/><img src="assets/readme/section-results.svg" width="100%" alt="READ THE ARCHIVED RESULTS. Original evaluation tables and uncertainty statements."/></picture></p>
+<!-- KAN_DESIGN_results_END -->
 
 ## Results at a glance
 
@@ -48,6 +62,12 @@ These summarize archived experiments, **not a fresh rerun of this public release
 | Conditional explanation stability | 30 bootstrap fits; mean polynomial feature-support Jaccard = **0.5667**. |
 
 High decision agreement can coexist with poor probability fidelity. A rejected formula is a diagnostic approximation, **not an accepted explanation or clinical rule**.
+
+<!-- KAN_DESIGN_design_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-design-mobile.svg"/><img src="assets/readme/section-design.svg" width="100%" alt="FREEZE. EVALUATE. AUDIT.. The original study design and joint acceptance criteria."/></picture></p>
+
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/gates-mobile.svg"/><img src="assets/readme/gates.svg" width="100%" alt="All five original acceptance gates must pass together."/></picture></p>
+<!-- KAN_DESIGN_design_END -->
 
 ## Study design
 
@@ -76,6 +96,10 @@ Distillation extensions are **exploratory follow-ups** specified after the origi
 
 All must pass together. Node counts include deployed operations and output transformations. The sensitivity-loss bound is a **study criterion**, not a clinically validated safety standard.
 
+<!-- KAN_DESIGN_data_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-data-mobile.svg"/><img src="assets/readme/section-data.svg" width="100%" alt="FROM BEAT TO FEATURE. Dataset roles, processing choices and twelve engineered features."/></picture></p>
+<!-- KAN_DESIGN_data_END -->
+
 ## Data and processing
 
 | Dataset | Role | Evaluated cohort | Data source |
@@ -85,6 +109,14 @@ All must pass together. Node counts include deployed operations and output trans
 | MIT-BIH Supraventricular Arrhythmia | Additional holdout | 78 records; 184,347 eligible beats | [PhysioNet](https://physionet.org/content/svdb/1.0.0/) |
 
 The pipeline uses annotated beat centers, a fixed lead-selection rule, zero-phase 0.5–40 Hz filtering, annotation-centered windows, and twelve rhythm/morphology features. Imputation and standardization are fitted on training data only. **No raw-waveform CNN is evaluated.** Filtering and future-sample features make this an offline experiment, not an established real-time detector.
+
+<!-- KAN_DESIGN_start_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-start-mobile.svg"/><img src="assets/readme/section-start.svg" width="100%" alt="OPEN THE SOURCE RELEASE. The source ZIP, staged workflow and reproduction notes."/></picture></p>
+
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/release-mobile.svg"/><img src="assets/readme/release.svg" width="100%" alt="Code-only source release, staged execution and source manifest."/></picture></p>
+
+<p align="center"><a href="KAN_ECG_Source_Code.zip"><img src="assets/readme/doc-0.svg" width="430" alt="Source archive: Download the scientific source ZIP"/></a> <a href="REPRODUCIBILITY.md"><img src="assets/readme/doc-1.svg" width="430" alt="Reproduction guide: Phases, environments and artifact dependencies"/></a> <a href="CONTRIBUTING.md"><img src="assets/readme/doc-2.svg" width="430" alt="Contributing: Questions, methods and reproduction reports"/></a> <a href="CITATION.cff"><img src="assets/readme/doc-3.svg" width="430" alt="Citation record: Repository attribution and research status"/></a></p>
+<!-- KAN_DESIGN_start_END -->
 
 ## Start here
 
@@ -121,6 +153,10 @@ The ZIP contains **21 scientific source/protocol files**, plus its README and so
 
 </details>
 
+<!-- KAN_DESIGN_limits_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-limits-mobile.svg"/><img src="assets/readme/section-limits.svg" width="100%" alt="THE BOUNDARIES STAY VISIBLE. Original cohort, release and interpretation limitations."/></picture></p>
+<!-- KAN_DESIGN_limits_END -->
+
 ## Limitations worth reading
 
 - **MIT-BIH is record-disjoint, not guaranteed patient-disjoint.** Records 201/202 share a source. A sensitivity analysis excludes record 202 without changing models or thresholds.
@@ -128,6 +164,10 @@ The ZIP contains **21 scientific source/protocol files**, plus its README and so
 - **Negative results are bounded.** Failure concerns these implementations, features, surrogate families and gates—not all KANs or all symbolic regression.
 - **The release is code-only.** Raw signals, fitted models, participant-level predictions, private logs and the manuscript are absent. Some audits require archived artifacts not distributed here.
 - **Verification has limits.** Source syntax checks were performed; this release was not newly reproduced end-to-end. Hashes verify bytes, not clinical validity.
+
+<!-- KAN_DESIGN_authors_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/section-authors-mobile.svg"/><img src="assets/readme/section-authors.svg" width="100%" alt="PEOPLE, PROVENANCE AND STATUS. Original author contributions, citation and reuse status."/></picture></p>
+<!-- KAN_DESIGN_authors_END -->
 
 ## Authors and research status
 
@@ -140,3 +180,8 @@ Both authors are Integrated M.Tech. students in Artificial Intelligence and Bioi
 **Citation:** [CITATION.cff](CITATION.cff) provides repository attribution. No accepted-publication status or article DOI is claimed. **License:** no reuse license has been selected; public visibility does not imply unrestricted reuse. Dataset terms are separate.
 
 Questions about methods or reproduction? [Open an issue](https://github.com/adilsukumar/KAN-ECG-Research_Paper/issues) using [CONTRIBUTING.md](CONTRIBUTING.md). Never post patient-level information or credentials.
+
+
+<!-- KAN_DESIGN_closing_START -->
+<p><picture><source media="(max-width: 600px)" srcset="assets/readme/closing-mobile.svg"/><img src="assets/readme/closing.svg" width="100%" alt="Measure the prediction. Test the explanation. Each needs its own evidence."/></picture></p>
+<!-- KAN_DESIGN_closing_END -->
